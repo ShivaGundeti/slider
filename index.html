@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Slider</title>
+    <link rel="stylesheet" href="style.css">
+    <link
+    href="https://cdn.jsdelivr.net/npm/remixicon@4.3.0/fonts/remixicon.css"
+    rel="stylesheet"
+/>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/js/all.min.js"  crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+
+</head>
+<body>
+    <div class="gallery-wrapper">
+        <img src="./images/back.png" alt="" id="backbtn">
+        <div class="gallery">
+            <div>
+                <span><img src="./images/image-1.png" alt=""></span>
+                <span><img src="./images/image-2.png" alt=""></span>
+                <span><img src="./images/image-3.png" alt=""></span>
+            </div>
+            <div>
+                <span><img src="./images/image-4.png" alt=""></span>
+                <span><img src="./images/image-5.png" alt=""></span>
+                <span><img src="./images/image-6.png" alt=""></span>
+            </div>
+        </div>
+        <img src="./images/next.png" alt="" id="nextbtn">
+    </div>
+
+</body>
+<script>
+    const scroll = document.querySelector(".gallery");
+    const bb = document.getElementById("backbtn");
+    const nb = document.getElementById("nextbtn");
+
+    scroll.addEventListener("wheel",(evt) => {
+        evt.preventDefault();
+        scroll.scrollLeft += evt.deltaY;
+        scroll.style.scrollBehavior = "auto";
+    })
+
+    
+    nb.addEventListener('click',function () {
+        scroll.style.scrollBehavior = "smooth";
+        scroll.scrollLeft += 900;
+    })
+
+    bb.addEventListener('click',function () {
+        scroll.style.scrollBehavior = "smooth";
+        scroll.scrollLeft -= 900;
+    })
+
+
+</script>
+</html>
